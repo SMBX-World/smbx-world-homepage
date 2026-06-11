@@ -1137,6 +1137,58 @@ iframe {
 }
 
 /* ========================================================================== */
+/* Responsive Navigation                                                      */
+/* ========================================================================== */
+
+@media (max-width: 768px) {
+  #pipes {
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 0 8px;
+  }
+
+  .pipe {
+    width: 72px;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 73px;
+    background-size: contain;
+  }
+
+  .pipelabel {
+    padding: 4px;
+    height: auto;
+  }
+
+  .pipelabel a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  #pipes {
+    gap: 0;
+    padding: 0;
+  }
+
+  .pipe-col {
+    width: 33.333%;
+    box-sizing: border-box;
+  }
+
+  .pipe {
+    width: 60px;
+    padding-right: 6px;
+    padding-left: 6px;
+    height: 61px;
+  }
+
+  .pipelabel a {
+    font-size: 13px;
+  }
+}
+
+/* ========================================================================== */
 /* Theme: Desert                                                              */
 /* ========================================================================== */
 
