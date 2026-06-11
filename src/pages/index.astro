@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlockBox from '../components/BlockBox.astro';
+---
+
+<BaseLayout title="首页">
+  <header class="header clear" role="banner">
+    <p class="image"><img src="/images/assets/mario-leaf.png" /></p>
+
+    <BlockBox color="blue">
+      <h2>SMBX World</h2>
+      <p class="center"><span class="tagline">中文 Super Mario Bros. X 玩家社群</span></p>
+      <p>SMBX World 成立于 2022 年 3 月 3 日，是同人游戏 Super Mario Bros. X（超级马力欧兄弟 X）的中文社群，以替代百度贴吧的 SMBX 吧。</p>
+      <p>Super Mario Bros. X (SMBX) 是一款马力欧同人游戏，玩家可以在游戏中创建和游玩自己的关卡。游戏最初由 Redigit 发布于 2009 年，并发展出多个分支版本，包括 SMBX-38A、SMBX2、TheXTech 等。</p>
+    </BlockBox>
+  </header>
+
+  <main role="main">
+    <BlockBox color="white">
+      <section>
+        <article>
+          <h2>免责声明</h2>
+          <p>Super Mario Bros. X、SMBX World、本网站和所有相关实体均与任天堂无任何关联或从属关系，亦未获得任天堂的认可。“马力欧”、“路易吉”以及所有相关名称、图像和概念均为任天堂所有。SMBX 是非盈利的同人游戏，SMBX 开发组、SMBX World、本网站均不从中获取任何收益，我们亦反对任何商业性质的使用。</p>
+        </article>
+      </section>
+    </BlockBox>
+  </main>
+</BaseLayout>

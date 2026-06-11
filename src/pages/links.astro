@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlockBox from '../components/BlockBox.astro';
+
+const friendSites = [
+  {
+    name: 'SMBX 官网',
+    link: 'https://smbxgame.com/',
+    image: '/images/affiliates/smbx.gif',
+    desc: 'Super Mario Bros. X的官方网站和交流论坛。',
+  },
+  {
+    name: 'SMBX Equipo Estelar',
+    link: 'https://www.smbxequipoestelar.com/',
+    image: '/images/affiliates/SMBX_Equipo_Estelar.png',
+    desc: '西班牙语的 Super Mario Bros. X 玩家社区。',
+  },
+  {
+    name: 'PGE 论坛',
+    link: 'https://www.marioforever.net/',
+    image: '/images/affiliates/pge.png',
+    desc: 'PGE是由Wohlstand制作的游戏引擎，用于2D平台游戏的关卡编辑和游玩，当然也兼容SMBX。PGE论坛是Wohlstand的论坛，主要讨论PGE和SMBX，欢迎来看看~',
+  },
+  {
+    name: 'Mario Forever 社区',
+    link: 'https://www.marioforever.net/',
+    image: '/images/affiliates/mfcommunity.png',
+    desc: 'Mario Forever 社区是讨论马力欧同人游戏 Mario Forever、Mario Worker 及其相关衍生内容的交流平台。',
+  },
+  {
+    name: 'Mario Fan Game Galaxy（MFGG）',
+    link: 'http://www.mfgg.net/',
+    image: '/images/affiliates/mfgg.gif',
+    desc: 'MFGG对SMBX社区做出了巨大贡献，那里有着很多致力于游戏创作的人，他们做出了很多优秀的马力欧游戏。在这个网站上有很多优秀的马力欧同人游戏，以及一些操作指南，素材和声音，是个宝藏网站。',
+  },
+  {
+    name: 'MarioWiki',
+    link: 'https://www.mariowiki.com',
+    image: '/images/affiliates/mariowiki.gif',
+    desc: 'Super Mario Wiki 是一个庞大的网站，其中包含关于马力欧宇宙的几乎所有信息。如果你想了解关于马力欧系列的事情，这说不定是一个好去处。',
+  },
+  {
+    name: 'SMWCentral',
+    link: 'https://www.smwcentral.net/',
+    image: '/images/affiliates/smwc.gif',
+    desc: 'SMWCentral是最古老的马力欧ROM改版网站之一，它由Kieran Menor和Smallhacker于2006年创建。SMWC已经扩大了它的讨论范围，从超马世界到耀西岛，从超马全明星到超马64。在这个网站上有大量的ROM改版工具和一些很棒的改版，推荐一玩！',
+  },
+  {
+    name: 'Talkhaus',
+    link: 'http://talkhaus.raocow.com/',
+    image: '/images/affiliates/talkhaus.gif',
+    desc: '如果你看过很多改版游戏的录像，你很可能听说过raocow（一个油管视频博主）。他在YouTube上做视频已经有好几年了，甚至还录制了一些SMBX的世界。 Talkhaus是raocow的社区，他们有很多马力欧比赛和改版游戏。',
+  },
+];
+---
+
+<BaseLayout title="友情链接" theme="ice">
+  <header class="header clear" role="banner">
+    <p class="image"><img src="/images/assets/mario-hammer.png" /></p>
+  </header>
+
+  <main role="main">
+    <BlockBox color="white">
+      <section>
+        <h1>友情链接</h1>
+        <table cellpadding="0" cellspacing="0" width="100%">
+          <tbody>
+            {friendSites.map((site, i) => {
+              if (i % 2 === 0) {
+                const next = friendSites[i + 1];
+                return (
+                  <tr>
+                    <td class="panel-links-td">
+                      <p class="center"><span class="tagline"><a href={site.link} target="_blank" rel="noopener noreferrer">{site.name}</a></span></p>
+                      <p class="center"><a href={site.link} target="_blank" rel="noopener noreferrer"><img alt={site.name} title={site.name} src={site.image} /></a></p>
+                      <p class="center">{site.desc}</p>
+                    </td>
+                    {next ? (
+                      <td class="panel-links-td">
+                        <p class="center"><span class="tagline"><a href={next.link} target="_blank" rel="noopener noreferrer">{next.name}</a></span></p>
+                        <p class="center"><a href={next.link} target="_blank" rel="noopener noreferrer"><img alt={next.name} title={next.name} src={next.image} /></a></p>
+                        <p class="center">{next.desc}</p>
+                      </td>
+                    ) : <td></td>}
+                  </tr>
+                );
+              }
+              return null;
+            })}
+          </tbody>
+        </table>
+      </section>
+    </BlockBox>
+
+    <div class="block-links" style="margin: 32px auto; display: flex; justify-content: center; gap: 16px;">
+      <div style="flex: 1; min-width: 0;">
+        <BlockBox color="blue">
+          <p class="center"><span class="title">工具站点</span></p>
+          <ul>
+            <li><a href="http://www.spriters-resource.com" target="_blank" rel="noopener noreferrer">The Spriters Resource</a></li>
+            <li><a href="https://www.getpaint.net/" target="_blank" rel="noopener noreferrer">Paint.NET</a></li>
+          </ul>
+        </BlockBox>
+      </div>
+      <div style="flex: 1; min-width: 0;">
+        <BlockBox color="green">
+          <p class="center"><span class="title">ROM改版站点</span></p>
+          <ul>
+            <li><a href="http://acmlm.kafuka.org/board/" target="_blank" rel="noopener noreferrer">board2</a></li>
+            <li><a href="http://jul.rustedlogic.net/" target="_blank" rel="noopener noreferrer">Jul</a></li>
+            <li><a href="http://www.romhacking.net" target="_blank" rel="noopener noreferrer">ROMhacking.net</a></li>
+          </ul>
+        </BlockBox>
+      </div>
+      <div style="flex: 1; min-width: 0;">
+        <BlockBox color="orange">
+          <p class="center"><span class="title">相关贴吧</span></p>
+          <ul>
+            <li><a href="https://tieba.baidu.com/smbx" target="_blank" rel="noopener noreferrer">smbx吧</a></li>
+            <li><a href="https://tieba.baidu.com/%B3%AC%BC%B6%C2%ED%C0%EF%B0%C2" target="_blank" rel="noopener noreferrer">超级马里奥吧</a></li>
+            <li><a href="https://tieba.baidu.com/%C2%ED%C0%EF%B0%C2" target="_blank" rel="noopener noreferrer">马里奥吧</a></li>
+            <li><a href="https://tieba.baidu.com/%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%8E%9B%E4%B8%BD" target="_blank" rel="noopener noreferrer">永远的玛丽吧</a></li>
+          </ul>
+        </BlockBox>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

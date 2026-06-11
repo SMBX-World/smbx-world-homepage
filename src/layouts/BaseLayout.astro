@@ -1,0 +1,121 @@
+---
+interface Props {
+  title: string;
+  theme?: 'default' | 'desert' | 'ice';
+}
+
+const { title, theme = 'default' } = Astro.props;
+const themeClass = theme !== 'default' ? `theme-${theme}` : '';
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="超级马力欧兄弟X - 史上最棒的超级马力欧同人游戏" />
+    <link href="/favicon.ico" rel="shortcut icon" />
+    <title>{title} - SMBX World</title>
+  </head>
+  <body class={themeClass}>
+    <table id="main-table" cellpadding="0" cellspacing="0" width="100%" style="height: 100%; table-layout: fixed;">
+      <tr>
+        <td style="vertical-align: top;">
+          <div class="menu">
+            <a href="/"><img alt="超级马力欧兄弟X" title="超级马力欧兄弟X" src="/images/assets/logo.png" /></a>
+          </div>
+          <div id="pipes">
+            <div class="pipe-col">
+              <div class="pipe"></div>
+              <div class="pipelabel"><a title="首页" href="/">首页</a></div>
+            </div>
+            <div class="pipe-col">
+              <div class="pipe"></div>
+              <div class="pipelabel"><a title="下载 SMBX" href="/downloads">下载</a></div>
+            </div>
+            <div class="pipe-col">
+              <div class="pipe"></div>
+              <div class="pipelabel"><a title="社区" href="https://smbx.world/" target="_blank" rel="noopener noreferrer">社区</a></div>
+            </div>
+            <div class="pipe-col">
+              <div class="pipe"></div>
+              <div class="pipelabel"><a title="百科" href="https://wiki.smbx.world/" target="_blank" rel="noopener noreferrer">百科</a></div>
+            </div>
+            <div class="pipe-col">
+              <div class="pipe"></div>
+              <div class="pipelabel"><a title="地图站" href="https://station.smbx.world/" target="_blank" rel="noopener noreferrer">地图站</a></div>
+            </div>
+            <div class="pipe-col">
+              <div class="pipe"></div>
+              <div class="pipelabel"><a title="到其他网站的链接" href="/links">友链</a></div>
+            </div>
+          </div>
+
+          <div class="wrapper">
+            <slot />
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="valign-bottom">
+          <div id="link-nextpage">
+            <p class="image"><a class="link-footer-1" title="SMBX Episodes" href="/episodes">作品</a></p>
+            <p class="image"><img class="footer-image" src="/images/assets/footer-1.png" /></p>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td id="footer">
+          <table id="footer-links" cellpadding="0" cellspacing="0">
+            <tr>
+              <td>
+                <div class="footer-left">
+                  2022-2026 SMBX World，从SuperMarioBrosX.org上复制并修改 &bull; <a href="/">首页</a> &bull; <a href="/downloads">下载</a> &bull; <a href="https://smbx.world/" target="_blank" rel="noopener noreferrer">社区</a> &bull; <a href="https://wiki.smbx.world/" target="_blank" rel="noopener noreferrer">百科</a> &bull; <a href="https://station.smbx.world/" target="_blank" rel="noopener noreferrer">地图站</a> &bull; <a href="/links">友链</a>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <div id="lightbox" class="lightbox">
+      <div class="lightbox-backdrop"></div>
+      <img class="lightbox-img" src="" alt="" />
+    </div>
+
+    <script>
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox?.querySelector<HTMLImageElement>('.lightbox-img');
+      const backdrop = lightbox?.querySelector('.lightbox-backdrop');
+
+      document.querySelectorAll('a[data-lightbox]').forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          if (lightboxImg && lightbox) {
+            lightboxImg.src = link.getAttribute('href') || '';
+            const thumbImg = link.querySelector('img');
+            lightboxImg.alt = thumbImg instanceof HTMLImageElement ? thumbImg.alt : '';
+            lightbox.classList.add('active');
+          }
+        });
+      });
+
+      function closeLightbox() {
+        lightbox?.classList.remove('active');
+        if (lightboxImg) lightboxImg.src = '';
+      }
+
+      backdrop?.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

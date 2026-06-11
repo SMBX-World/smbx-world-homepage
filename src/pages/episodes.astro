@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlockBox from '../components/BlockBox.astro';
+
+const episodes = [
+  {
+    title: 'The Legend of Darkness',
+    link: 'https://smbx.world/d/296',
+    image: '/images/uploads/tlod-logo.png',
+    author: '喝了工作室',
+    smbx: '1.4.5',
+    date: '2025.6.27',
+  },
+  {
+    title: 'Contradict\'s Tactical Tactics Contest 5',
+    link: 'https://smbx.world/d/284',
+    image: '/images/uploads/cttc5.png',
+    author: 'CTTC5 Authors',
+    smbx: '1.4.5',
+    date: '2025.5.1',
+  },
+  {
+    title: 'Expedition - Astral Fragments',
+    link: 'https://smbx.world/d/279',
+    image: '/images/uploads/expedition.png',
+    author: 'Marchtinal',
+    authorLink: 'https://smbx.world/u/66',
+    smbx: '1.4.5',
+    date: '2025.4.4',
+  },
+  {
+    title: 'Planet of Tieba Deluxe',
+    link: 'https://smbx.world/d/220',
+    image: '/images/uploads/pot-logo.png',
+    author: 'PoT Authors',
+    smbx: '1.4.4',
+    date: '2024.7.2',
+  },
+  {
+    title: '双子阴阳岛之谜',
+    link: 'https://smbx.world/d/9-38a-121',
+    image: '/images/uploads/2022-1-11_22h59m2s73ms.png',
+    author: '黄亨少',
+    authorLink: 'https://smbx.world/u/3',
+    date: '2022.5.15',
+    smbx: '1.4.5',
+  },
+  {
+    title: 'Contradict\'s Tactical Tactics Contest 3',
+    link: 'https://smbx.world/d/306',
+    image: '/images/uploads/cttc3-level.png',
+    author: 'CTTC3 Authors',
+    date: '2025.8.8',
+    smbx: '1.4.4',
+  },
+  {
+    title: 'Island of Drank',
+    link: 'https://smbx.world/d/43',
+    image: '/images/uploads/iod-logo.png',
+    author: 'IoD Authors',
+    date: '2021.2.26',
+    smbx: '1.4.4',
+  },
+  {
+    title: 'Endless Exploration',
+    link: 'https://tieba.baidu.com/p/3897548111',
+    image: '/images/uploads/6e3f9351f819861868f573944ced2e738bd4e611.jpg',
+    author: 'KFCMario',
+    date: '2015.7.16',
+    smbx: '1.3',
+  },
+  {
+    title: 'Super Mario Forever X',
+    link: 'https://tieba.baidu.com/p/3599130600',
+    image: '/images/uploads/4a0ff70735fae6cd8db174630bb30f2442a70f54.jpg',
+    author: 'KFCMario',
+    date: '2015.2.23',
+    smbx: '1.3',
+  },
+  {
+    title: 'y4 world',
+    link: 'https://tieba.baidu.com/p/3592637677',
+    image: '/images/uploads/e80ee55c1038534376877d869413b07ecb8088f6.jpg',
+    author: 'Yave Yu',
+    authorLink: 'https://smbx.world/u/32',
+    date: '2015.2.18',
+    smbx: '1.3',
+  },
+];
+---
+
+<BaseLayout title="作品" theme="desert">
+  <header class="header clear" role="banner">
+    <p class="image"><img src="/images/assets/toad.png" /></p>
+
+    <BlockBox color="orange">
+      <h2>作品</h2>
+      <p>在下面你可以下载一些热门的作品来玩。只要简单的下载然后把压缩包解压到SMBX文件夹下的"Worlds"文件夹就行了！</p>
+      <p>想玩更多作品？来看看<a href="https://station.smbx.world/" target="_blank" rel="noopener noreferrer">SMBX World 地图站</a>!</p>
+    </BlockBox>
+  </header>
+
+  <main role="main">
+    <section>
+      <div class="archive-body">
+        {episodes.map((ep) => (
+          <article>
+            <BlockBox color="orange">
+              <div class="featured-image">
+                <a href={ep.link} title={ep.title} target="_blank" rel="noopener noreferrer">
+                  <img src={ep.image} alt={ep.title} />
+                </a>
+              </div>
+              <h2>
+                <a href={ep.link} title={ep.title} target="_blank" rel="noopener noreferrer">　{ep.title}</a>
+              </h2>
+              <span class="author">作者 <a href={ep.authorLink} title={`Posts by ${ep.author}`} rel="author noopener noreferrer" target="_blank">{ep.author}</a></span><br />
+              <span class="smbx-version">SMBX 版本：{ep.smbx}</span><br />
+              <span class="date">发布于 {ep.date.replace(/(\d+)\.(\d+)\.(\d+)/, (_, y, m, d) => `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`)}</span>
+            </BlockBox>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>
