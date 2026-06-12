@@ -1141,6 +1141,10 @@ iframe {
 /* ========================================================================== */
 
 @media (max-width: 768px) {
+  .archive-body {
+    grid-template-columns: 1fr;
+  }
+
   #pipes {
     flex-wrap: wrap;
     gap: 0;
