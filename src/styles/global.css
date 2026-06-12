@@ -11,6 +11,7 @@
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  height: 100%;
 }
 
 /* Sections
@@ -567,7 +568,7 @@ li {
 }
 
 .link-footer-1:hover {
-  color: #F8C810;;
+  color: #F8C810;
 }
 
 /* ========================================================================== */
@@ -579,11 +580,12 @@ html {
 }
 
 body {
-  background-color: rgb(144, 192, 248);
-  background-image: url('/images/assets/top.gif');
-  background-position: top left;
-  background-repeat: repeat-x;
-  height: 100%;
+  background-color: #64aaff;
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 iframe {
@@ -623,7 +625,7 @@ iframe {
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-  height: 89px;
+  height: 96px;
   transition: transform 0.15s ease;
 }
 
@@ -644,7 +646,7 @@ iframe {
 }
 
 .pipelabel a:hover {
-  color: #F8C810;;
+  color: #F8C810;
 }
 
 /* ========================================================================== */
@@ -689,8 +691,13 @@ iframe {
 /* ========================================================================== */
 
 #main-table {
+  flex: 1 0 auto;
+  width: 100%;
+  border-collapse: collapse;
   background-position: bottom left;
   background-repeat: repeat-x;
+  position: relative;
+  z-index: 1;
 }
 
 .menu {
@@ -741,6 +748,8 @@ iframe {
   background-image: url('/images/assets/footer.png');
   background-repeat: repeat-x;
   vertical-align: bottom;
+  position: relative;
+  z-index: 2;
 }
 
 #footer-water {
@@ -758,6 +767,8 @@ iframe {
 
 #link-nextpage {
   margin-bottom: -32px;
+  position: relative;
+  z-index: 1;
 }
 
 .affiliate-image {
@@ -773,7 +784,7 @@ iframe {
 }
 
 .footer-left {
-  background-color: rgb(144, 192, 248);
+  background-color: #64aaff;
   border-top: solid 2px #000000;
   border-right: solid 2px #000000;
   float: left;
@@ -783,7 +794,7 @@ iframe {
 }
 
 .footer-right {
-  background-color: rgb(144, 192, 248);
+  background-color: #64aaff;
   border-top: solid 2px #000000;
   border-left: solid 2px #000000;
   float: right;
@@ -797,6 +808,99 @@ iframe {
 }
 
 /* ========================================================================== */
+/* Bottom Background                                                          */
+/* ========================================================================== */
+
+.bottom-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 368px;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bottom-bg-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat-x;
+  background-position: bottom left;
+}
+
+.top-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px; /* 设置一个足够高的高度，或者根据需要调整 */
+  background-repeat: repeat-x;
+  background-position: bottom left;
+  z-index: -2;
+  pointer-events: none;
+  background-image: url('/images/assets/top.png');
+}
+
+/* Default theme: bg.png */
+.bottom-bg-back {
+  background-image: url('/images/assets/bg.png');
+  background-size: auto 100%;
+}
+
+.bottom-bg-mid {
+  display: none;
+}
+
+.bottom-bg-front {
+  display: none;
+}
+
+/* Desert theme: bg-desert.png */
+.theme-desert .top-bg {
+  background-image: url('/images/assets/top-desert.png');
+}
+
+.theme-desert .bottom-bg-back {
+  background-image: url('/images/assets/bg-desert.png');
+}
+
+/* Ice theme: bg-ice1 + bg-ice-2 (scrolling) + bg-ice-3 */
+.theme-ice .top-bg {
+  background-image: url('/images/assets/top-ice.png');
+}
+
+.theme-ice .bottom-bg-back {
+  background-image: url('/images/assets/bg-ice-3.png');
+  background-size: auto 100%;
+}
+
+.theme-ice .bottom-bg-mid {
+  display: block;
+  background-image: url('/images/assets/bg-ice-2.png');
+  background-size: auto 100%;
+  animation: bg-scroll 20s linear infinite;
+}
+
+.theme-ice .bottom-bg-front {
+  display: block;
+  background-image: url('/images/assets/bg-ice1.png');
+  background-size: auto 100%;
+}
+
+@keyframes bg-scroll {
+  0% {
+    background-position: 512px bottom;
+  }
+  100% {
+    background-position: 0 bottom;
+  }
+}
+
+/* ========================================================================== */
 /* Block Code                                                                 */
 /* ========================================================================== */
 
@@ -805,311 +909,306 @@ iframe {
   table-layout: fixed;
 }
 
+.blockbox-content {
+  /* Subtract 16px from vertical padding. Since padding cannot be negative in standard CSS, 
+     we use negative margins on the content wrapper to achieve the same effect. */
+  margin-top: -16px;
+  margin-bottom: -16px;
+}
+
 /* Blue */
 
 .blue-top {
-  height: 16px;
+  height: 32px;
 }
 
 .blue-top-left {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/btl.png');
 }
 
 .blue-top-center {
-  height: 16px;
+  height: 32px;
   background-image: url('/images/assets/btc.png');
 }
 
 .blue-top-right {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/btr.png');
 }
 
 .blue-mid-left {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-width: 32px;
+  width: 32px;
   background-image: url('/images/assets/bml.png');
+  background-repeat: repeat-y;
 }
 
 .blue-mid-center {
   background-color: rgb(88, 200, 248);
-  padding-bottom: 12px;
 }
 
 .blue-mid-right {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-width: 32px;
+  width: 32px;
   background-image: url('/images/assets/bmr.png');
+  background-repeat: repeat-y;
 }
 
 .blue-bot {
-  height: 16px;
+  height: 32px;
 }
 
 .blue-bot-left {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/bbl.png');
 }
 
 .blue-bot-center {
-  height: 16px;
+  height: 32px;
   background-image: url('/images/assets/bbc.png');
 }
 
 .blue-bot-right {
   table-layout: fixed;
-  height: 16px;
-  width: 16px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/bbr.png');
 }
 
 /* Green */
 
 .green-top {
-  height: 16px;
+  height: 32px;
 }
 
 .green-top-left {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/gtl.png');
 }
 
 .green-top-center {
-  height: 16px;
+  height: 32px;
   background-image: url('/images/assets/gtc.png');
 }
 
 .green-top-right {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/gtr.png');
 }
 
 .green-mid-left {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-width: 32px;
+  width: 32px;
   background-image: url('/images/assets/gml.png');
+  background-repeat: repeat-y;
 }
 
 .green-mid-center {
   background-color: rgb(128, 184, 80);
-  padding-bottom: 12px;
 }
 
 .green-mid-right {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-width: 32px;
+  width: 32px;
   background-image: url('/images/assets/gmr.png');
+  background-repeat: repeat-y;
 }
 
 .green-bot {
-  height: 16px;
+  height: 32px;
 }
 
 .green-bot-left {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/gbl.png');
 }
 
 .green-bot-center {
-  height: 16px;
+  height: 32px;
   background-image: url('/images/assets/gbc.png');
 }
 
 .green-bot-right {
   table-layout: fixed;
-  height: 16px;
-  width: 16px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/gbr.png');
 }
 
 /* Orange */
 
 .orange-top {
-  height: 16px;
+  height: 32px;
 }
 
 .orange-top-left {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/otl.png');
 }
 
 .orange-top-center {
-  height: 16px;
+  height: 32px;
   background-image: url('/images/assets/otc.png');
 }
 
 .orange-top-right {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/otr.png');
 }
 
 .orange-mid-left {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-width: 32px;
+  width: 32px;
   background-image: url('/images/assets/oml.png');
+  background-repeat: repeat-y;
 }
 
 .orange-mid-center {
   background-color: rgb(248, 144, 72);
-  padding-bottom: 12px;
 }
 
 .orange-mid-right {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-width: 32px;
+  width: 32px;
   background-image: url('/images/assets/omr.png');
+  background-repeat: repeat-y;
 }
 
 .orange-bot {
-  height: 16px;
+  height: 32px;
 }
 
 .orange-bot-left {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/obl.png');
 }
 
 .orange-bot-center {
-  height: 16px;
+  height: 32px;
   background-image: url('/images/assets/obc.png');
 }
 
 .orange-bot-right {
   table-layout: fixed;
-  height: 16px;
-  width: 16px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/obr.png');
 }
 
 /* White */
 
 .white-top {
-  height: 16px;
+  height: 32px;
 }
 
 .white-top-left {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/wtl.png');
 }
 
 .white-top-center {
-  height: 16px;
+  height: 32px;
   background-image: url('/images/assets/wtc.png');
 }
 
 .white-top-right {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/wtr.png');
 }
 
 .white-mid-left {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-width: 32px;
+  width: 32px;
   background-image: url('/images/assets/wml.png');
+  background-repeat: repeat-y;
 }
 
 .white-mid-center {
   background-color: rgb(224, 224, 224);
-  padding-bottom: 12px;
 }
 
 .white-mid-right {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-width: 32px;
+  width: 32px;
   background-image: url('/images/assets/wmr.png');
+  background-repeat: repeat-y;
 }
 
 .white-bot {
-  height: 16px;
+  height: 32px;
 }
 
 .white-bot-left {
   table-layout: fixed;
-  max-height: 16px;
-  max-width: 16px;
-  height: 16px;
-  width: 16px;
+  max-height: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/wbl.png');
 }
 
 .white-bot-center {
-  height: 16px;
+  height: 32px;
   background-image: url('/images/assets/wbc.png');
 }
 
 .white-bot-right {
   table-layout: fixed;
-  height: 16px;
-  width: 16px;
+  height: 32px;
+  width: 32px;
   background-image: url('/images/assets/wbr.png');
 }
 
@@ -1144,6 +1243,85 @@ iframe {
 
 #middle p {
   text-align: left;
+}
+
+/* ========================================================================== */
+/* Download Buttons                                                           */
+/* ========================================================================== */
+
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border: 3px solid #000;
+  font-family: "Microsoft YaHei", monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  box-shadow:
+    inset -3px -3px 0 rgba(0, 0, 0, 0.25),
+    inset 3px 3px 0 rgba(255, 255, 255, 0.25);
+  transition: transform 0.1s;
+}
+
+.download-btn:hover {
+  box-shadow:
+    inset -3px -3px 0 rgba(0, 0, 0, 0.25),
+    inset 3px 3px 0 rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.download-btn:active {
+  transform: translateY(2px);
+  box-shadow:
+    inset -3px -3px 0 rgba(0, 0, 0, 0.25),
+    inset 3px 3px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.btn-legacy {
+  background-color: #ff3333;
+}
+
+.btn-38a {
+  background-color: #59c538;
+}
+
+.btn-x2 {
+  background-color: #ffcc33;
+  color: #333;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-x2:hover {
+  color: #333;
+}
+
+.btn-xtech {
+  background-color: #438bff;
+}
+
+.download-btn.active {
+  outline-offset: -3px;
+  filter: brightness(1.2);
 }
 
 /* ========================================================================== */
@@ -1207,14 +1385,7 @@ iframe {
 /* ========================================================================== */
 
 body.theme-desert {
-  background-color: rgb(240, 200, 144);
-  background-image: url('/images/assets/top-desert.png');
-}
-
-.theme-desert #main-table {
-  background-image: url('/images/assets/footer-desert-2.png');
-  background-position: bottom left;
-  background-repeat: repeat-x;
+  background-color: #ff7500;
 }
 
 .theme-desert .pipe {
@@ -1227,7 +1398,7 @@ body.theme-desert {
 
 .theme-desert .footer-left,
 .theme-desert .footer-right {
-  background-color: rgb(240, 200, 144);
+  background-color: #ff7500;
 }
 
 /* ========================================================================== */
@@ -1235,15 +1406,7 @@ body.theme-desert {
 /* ========================================================================== */
 
 body.theme-ice {
-  background-color: rgb(192, 184, 224);
-  background-image: url('/images/assets/top-ice.png');
-  background-repeat: repeat-x;
-}
-
-.theme-ice #main-table {
-  background-image: url('/images/assets/footer-ice-2.png');
-  background-position: bottom left;
-  background-repeat: repeat-x;
+  background-color: #9890f8;
 }
 
 .theme-ice .pipe {
@@ -1256,5 +1419,5 @@ body.theme-ice {
 
 .theme-ice .footer-left,
 .theme-ice .footer-right {
-  background-color: rgb(192, 184, 224);
+  background-color: #9890f8;
 }

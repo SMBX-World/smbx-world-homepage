@@ -15,7 +15,9 @@ const { color } = Astro.props;
   <tr class={`${color}-mid`}>
     <td class={`${color}-mid-left`}></td>
     <td class={`${color}-mid-center`}>
-      <slot />
+      <div class="blockbox-content">
+        <slot />
+      </div>
     </td>
     <td class={`${color}-mid-right`}></td>
   </tr>
@@ -25,3 +27,21 @@ const { color } = Astro.props;
     <td class={`${color}-bot-right`}></td>
   </tr>
 </table>
+
+<script>
+  function adjustBlockBoxHeight() {
+    const midCenters = document.querySelectorAll('.blue-mid-center, .green-mid-center, .orange-mid-center, .white-mid-center');
+    midCenters.forEach((el) => {
+      const cell = el as HTMLElement;
+      cell.style.paddingBottom = '0px';
+      const height = cell.getBoundingClientRect().height;
+      const remainder = height % 32;
+      if (remainder !== 0) {
+        cell.style.paddingBottom = `${32 - remainder}px`;
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', adjustBlockBoxHeight);
+  window.addEventListener('resize', adjustBlockBoxHeight);
+</script>

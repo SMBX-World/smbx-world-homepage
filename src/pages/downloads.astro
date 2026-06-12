@@ -26,9 +26,9 @@ import BlockBox from '../components/BlockBox.astro';
       <p>SMBX 有多种版本分支，不同的版本对地图的兼容是不同的，这里的所有版本差异如下：</p>
       <ul>
         <li><span class="emphasis">原版 (Legacy)</span>：最原始的版本，最新为 1.3。不过有后人修正部分素材的 1.3.0.1 版本传世。</li>
-        <li><span class="emphasis">38A</span>：由 5438A38A 续更，最新版本为 1.4.5，现以无任何更新痕迹，最新版本为 p31.1。<br>
+        <li><span class="emphasis">38A</span>：由 5438A38A 续更，最新版本为 1.4.5 p31.1。<br>
         （注：5438A38A 在更新 1.4.5 时，将游戏的程序完全重构了一遍，同时移除了部分 1.4.4 内所支持的脚本函数，故 1.4.5 无法完全兼容部分 1.4.4 作品。若想游玩 38A 版本的作品，<span class="emphasis">建议将 1.4.4 与 1.4.5 版本同时下载</span>，使用 1.4.4 及之前的 1.4 版本开发的作品用 1.4.4 运行，使用 1.4.5 开发的作品用 1.4.5 运行。）</li>
-        <li><span class="emphasis">TheXTech</span>：Wohlstand 基于原版 1.3 使用 C++ 重构的版本，游玩体验更佳。</li>
+        <li><span class="emphasis">TheXTech</span>：Wohlstand 使用 C++ 重构的版本，兼容原版（1.3 及以下版本）作品，游玩体验更佳。</li>
         <li><span class="emphasis">SMBX2</span>：由 Codehaus 团队续更，最新版本为 B5。</li>
         <li><span class="emphasis">Moondust</span>：是 WohlSoft 团队打造的平台游戏引擎，可使用 SMBX 配置。</li>
         <li><span class="emphasis">SMR</span>：是 Core 基于 TheXTech 修改的版本。</li>
@@ -36,6 +36,25 @@ import BlockBox from '../components/BlockBox.astro';
       </ul>
     </BlockBox>
   </header>
+
+  <div class="download-buttons">
+    <a class="download-btn btn-legacy active" data-version="legacy">
+      <img class="btn-icon" src="/images/assets/smbx_128.png" alt="" />
+      <span class="btn-text">1.3</span>
+    </a>
+    <a class="download-btn btn-38a" data-version="38a">
+      <img class="btn-icon" src="/images/assets/smbx38a_128.png" alt="" />
+      <span class="btn-text">38A</span>
+    </a>
+    <a class="download-btn btn-x2" data-version="x2">
+      <img class="btn-icon" src="/images/assets/smbx2_128.png" alt="" />
+      <span class="btn-text">X2</span>
+    </a>
+    <a class="download-btn btn-xtech" data-version="xtech">
+      <img class="btn-icon" src="/images/assets/thextech_128.png" alt="" />
+      <span class="btn-text">TheXTech</span>
+    </a>
+  </div>
 
   <main role="main">
     <BlockBox color="white">
@@ -45,41 +64,84 @@ import BlockBox from '../components/BlockBox.astro';
           <p>这里分为官方渠道（简称官渠），如果官网下载慢怎么办？这里有国内服务器托管的下载地址。<br>
           在这里也感谢<a href="https://smbx.world/u/6" class="UserMention">@斩风千雪</a>，<a href="https://smbx.world/u/5" class="UserMention">@Hafulor</a>，<a href="https://smbx.world/u/32" class="UserMention">@Yave Yu</a>提供的网盘服务。</p>
 
-          <ul><li><p><strong>Legacy 版本</strong><br>
-          目前已不太建议使用老版本进行游玩，可以尝试 TheXTech，在游玩旧版本时会匹配对应版本的特性。<br>
-          <a href="https://pan.baidu.com/s/166zoimBykihtUEEtV7EC9w?pwd=y3mm" rel="ugc nofollow">SMBX 1.3.0.1（百度盘）</a><br>
-          更老的版本请访问该页面：<a href="https://smbxarchive.wohlsoft.ru/" rel="ugc nofollow">https://smbxarchive.wohlsoft.ru/</a></p></li>
+          <div class="version-panel" id="panel-legacy">
+            <p><strong>Legacy 版本</strong><br>
+            目前已不太建议使用老版本进行游玩，可以尝试 TheXTech，在游玩旧版本时会匹配对应版本的特性。<br>
+            <a href="https://pan.baidu.com/s/166zoimBykihtUEEtV7EC9w?pwd=y3mm" rel="ugc nofollow">SMBX 1.3.0.1（百度盘）</a><br>
+            更老的版本请访问该页面：<a href="https://smbxarchive.wohlsoft.ru/" rel="ugc nofollow">https://smbxarchive.wohlsoft.ru/</a></p>
+          </div>
 
-          <li><p><strong>38A 版本</strong><br>
-          <a href="https://pan.baidu.com/s/1pljORzfPrTBHKnNaWc_n3A?pwd=2333" rel="ugc nofollow">SMBX 1.4.5.1</a>（由 <a href="https://smbx.world/u/49" class="UserMention">@霁晴</a> 制作的改良版，优化 1.4.5 游戏本体内容（如贴图素材）并加入了更符合 38A 特色的 TI2（新状态，新关卡，新 Boss）作为内置作品，<strong>强烈推荐</strong>）<br>
-          <a href="https://smbx38a.wohlsoft.ru/" rel="ugc nofollow">SMBX 1.4.5（官渠）</a><br>
-          <a href="https://pan.baidu.com/s/1mwrpen0tswMYe6yKJ2F9PQ" rel="ugc nofollow">SMBX 1.4.4 &amp; 1.4.5（百度盘）</a></p></li>
+          <div class="version-panel" id="panel-38a">
+            <p><strong>38A 版本</strong><br>
+            <a href="https://pan.baidu.com/s/1pljORzfPrTBHKnNaWc_n3A?pwd=2333" rel="ugc nofollow">SMBX 1.4.5.1</a>（由 <a href="https://smbx.world/u/49" class="UserMention">@霁晴</a> 制作的改良版，优化 1.4.5 游戏本体内容（如贴图素材）并加入了更符合 38A 特色的 TI2（新状态，新关卡，新 Boss）作为内置作品，<strong>强烈推荐</strong>）<br>
+            <a href="https://smbx38a.wohlsoft.ru/" rel="ugc nofollow">SMBX 1.4.5（官渠）</a><br>
+            <a href="https://pan.baidu.com/s/1mwrpen0tswMYe6yKJ2F9PQ" rel="ugc nofollow">SMBX 1.4.4 & 1.4.5（百度盘）</a></p>
+          </div>
 
-          <li><p><strong>X2 版本</strong><br>
-          <a href="https://codehaus.moe/downloads.php" rel="ugc nofollow">SMBX2（官渠）</a><br>
-          <a href="https://pan.baidu.com/s/1Dw4pyPKbFO-YnysekxtD_A?pwd=16np" rel="ugc nofollow">SMBX2 （百度盘）</a>（提取码 16np）</p></li>
+          <div class="version-panel" id="panel-x2">
+            <p><strong>X2 版本</strong><br>
+            <a href="https://codehaus.moe/downloads.php" rel="ugc nofollow">SMBX2（官渠）</a><br>
+            <a href="https://pan.baidu.com/s/1Dw4pyPKbFO-YnysekxtD_A?pwd=16np" rel="ugc nofollow">SMBX2 （百度盘）</a>（提取码 16np）</p>
+          </div>
 
-          <li><p><strong>TheXTech</strong><br>
-          官网渠道：<a href="https://wohlsoft.ru/forum/viewtopic.php?f=5&amp;t=3677" rel="ugc nofollow">TheXTech（官渠）</a><br>
-          目前最新版本为 1.3.7.2。<br>
-          以下链接为访问官网下载速度慢的用户准备的备用链接：<br>
-          Windows：<a href="https://wwbta.lanzouq.com/i5AET3eoffob" rel="ugc nofollow">32位</a>，<a href="https://wwbta.lanzouq.com/iKSJ63eofg4h" rel="ugc nofollow">64位</a>，<a href="https://wwbta.lanzouq.com/iJnxK3eoffyb" rel="ugc nofollow">ARM</a><br>
-          Android：<a href="https://wwbta.lanzouq.com/iqWzd3eofffc" rel="ugc nofollow">APK安装包</a>，<a href="https://wwbta.lanzouq.com/iO8ap3eoff6d" rel="ugc nofollow">资源包（SMBX）</a><br>
-          Linux：<a href="https://wwbta.lanzouq.com/iszNt3eofgbe" rel="ugc nofollow">U24</a><br>
-          MacOS（英特尔&amp;苹果M系列芯片均可）：<a href="https://wwbta.lanzouq.com/iAEMN3eofmfe" rel="ugc nofollow">安装包</a><br>
-          Web：<a href="http://wohlsoft.ru/TheXTech/smbx-on-web/" title="即刻开玩" target="_blank" rel="noopener noreferrer">即刻开玩</a></p></li></ul>
+          <div class="version-panel" id="panel-xtech">
+            <p><strong>TheXTech</strong><br>
+            官网渠道：<a href="https://wohlsoft.ru/forum/viewtopic.php?f=5&t=3677" rel="ugc nofollow">TheXTech（官渠）</a><br>
+            目前最新版本为 1.3.7.2。<br>
+            以下链接为访问官网下载速度慢的用户准备的备用链接：<br>
+            Windows：<a href="https://wwbta.lanzouq.com/i5AET3eoffob" rel="ugc nofollow">32位</a>，<a href="https://wwbta.lanzouq.com/iKSJ63eofg4h" rel="ugc nofollow">64位</a>，<a href="https://wwbta.lanzouq.com/iJnxK3eoffyb" rel="ugc nofollow">ARM</a><br>
+            Android：<a href="https://wwbta.lanzouq.com/iqWzd3eofffc" rel="ugc nofollow">APK安装包</a>，<a href="https://wwbta.lanzouq.com/iO8ap3eoff6d" rel="ugc nofollow">资源包（SMBX）</a><br>
+            Linux：<a href="https://wwbta.lanzouq.com/iszNt3eofgbe" rel="ugc nofollow">U24</a><br>
+            MacOS（英特尔&苹果M系列芯片均可）：<a href="https://wwbta.lanzouq.com/iAEMN3eofmfe" rel="ugc nofollow">安装包</a><br>
+            Web：<a href="http://wohlsoft.ru/TheXTech/smbx-on-web/" title="即刻开玩" target="_blank" rel="noopener noreferrer">即刻开玩</a></p>
+            <p>注：手机端需下载资源包才可正常运行，可以前往该网站下载：<a href="https://github.com/TheXTech/TheXTech/wiki/Game-assets-packages" rel="ugc nofollow">GitHub</a>，也可以点击上方链接。</p>
+          </div>
 
-          <p>注：手机端需下载资源包才可正常运行，可以前往该网站下载：<a href="https://github.com/TheXTech/TheXTech/wiki/Game-assets-packages" rel="ugc nofollow">GitHub</a>，也可以点击上方链接。</p>
-          <h3>Q&amp;A</h3>
+          <h3>Q&A</h3>
           <h4>游玩地图相关</h4>
           <p>Q: 如果我下载完一个地图，应该如何游玩它呢？<br>
           A: 根据这个地图制作时使用的 SMBX 版本，选择兼容它的 SMBX 版本。将下载下来的地图文件夹放置到该 SMBX 的根目录的 worlds 文件夹内，再运行 smbx.exe，选择 Start Game，之后便可以在地图列表中找到自己刚刚下载的地图了。</p>
 
-          <h4>SMBX 38A 相关</h4>
-          <p>Q: 如果我下载完 SMBX 38A，却发现杀软给我吞了主程序，该怎么办？是重下一个吗？<br>
-          A: 不用，SMBX 38A 1.4.5 据许多人反映，下载完就被杀软报毒，并且有些杀软直接强制删除了对应的文件，造成很大的不便，但这里完全不用担心，因为游戏本身没有什么问题，但是 38A 给游戏本体加了一个<a href="https://baike.baidu.com/item/%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86/1892288" rel="ugc nofollow">代码混淆器</a>，导致程序误认为该程序是木马程序，从而导致报毒，甚至造成误删，唯一办法是将 SMBX.exe 加入杀软的白名单里。（如果解压后速误删可以尝试将杀软完全关掉再解压。）</p>
+          <div class="version-panel" id="panel-38a-faq">
+            <h4>SMBX 38A 相关</h4>
+            <p>Q: 如果我下载完 SMBX 38A，却发现杀软给我吞了主程序，该怎么办？是重下一个吗？<br>
+            A: 不用，SMBX 38A 1.4.5 据许多人反映，下载完就被杀软报毒，并且有些杀软直接强制删除了对应的文件，造成很大的不便，但这里完全不用担心，因为游戏本身没有什么问题，但是 38A 给游戏本体加了一个<a href="https://baike.baidu.com/item/%E4%BB%A3%E7%A0%81%E6%B7%B7%E6%B7%86/1892288" rel="ugc nofollow">代码混淆器</a>，导致程序误认为该程序是木马程序，从而导致报毒，甚至造成误删，唯一办法是将 SMBX.exe 加入杀软的白名单里。（如果解压后速误删可以尝试将杀软完全关掉再解压。）</p>
+          </div>
         </article>
       </section>
     </BlockBox>
   </main>
+
+  <script>
+    const buttons = document.querySelectorAll<HTMLAnchorElement>('.download-btn');
+    const panels = document.querySelectorAll<HTMLElement>('.version-panel');
+
+    function switchVersion(version: string) {
+      panels.forEach(panel => {
+        panel.style.display = 'none';
+      });
+      const target = document.getElementById('panel-' + version);
+      if (target) target.style.display = '';
+
+      if (version === '38a') {
+        const faq = document.getElementById('panel-38a-faq');
+        if (faq) faq.style.display = '';
+      }
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.querySelector(`.download-btn[data-version="${version}"]`);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const version = btn.dataset.version;
+        if (version) switchVersion(version);
+      });
+    });
+
+    // Default: show legacy
+    switchVersion('legacy');
+  </script>
 </BaseLayout>
