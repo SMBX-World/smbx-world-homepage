@@ -218,6 +218,7 @@ import BlockBox from '../components/BlockBox.astro';
     document.querySelectorAll<HTMLImageElement>('#screens img').forEach(img => {
       if (!img.src.endsWith('.gif')) return;
       const freeze = () => {
+        if (!img.naturalWidth) return;
         const canvas = document.createElement('canvas');
         canvas.width = img.naturalWidth;
         canvas.height = img.naturalHeight;
@@ -231,7 +232,9 @@ import BlockBox from '../components/BlockBox.astro';
       if (img.complete && img.naturalWidth > 0) {
         freeze();
       } else {
-        img.addEventListener('load', freeze, { once: true });
+        img.decode().then(freeze).catch(() => {
+          img.addEventListener('load', freeze, { once: true });
+        });
       }
     });
   </script>
