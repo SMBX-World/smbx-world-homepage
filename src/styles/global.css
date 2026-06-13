@@ -1387,6 +1387,80 @@ iframe {
   outline-offset: -5px;
 }
 
+/* Download link buttons (within version panels) */
+.download-btn.dl-link {
+  width: auto;
+  min-width: 96px;
+  height: 40px;
+  padding: 0 8px;
+  background-image: none;
+  image-rendering: pixelated;
+  font-size: 14px;
+  margin: 4px 6px 4px 0;
+  border-style: solid;
+  border-width: 0 8px;
+  border-image-width: 0 1;
+  box-sizing: border-box;
+  line-height: 40px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.download-btn.dl-link:hover {
+  filter: brightness(1.1);
+}
+
+.download-btn.dl-link:active {
+  transform: translateY(2px);
+}
+
+.download-btn.dl-link.btn-legacy {
+  border-image-source: url('/images/assets/buttons.png');
+  border-image-slice: 0 8 120 8 fill;
+}
+
+.download-btn.dl-link.btn-38a {
+  border-image-source: url('/images/assets/buttons.png');
+  border-image-slice: 40 8 80 8 fill;
+}
+
+.download-btn.dl-link.btn-x2 {
+  border-image-source: url('/images/assets/buttons.png');
+  border-image-slice: 80 8 40 8 fill;
+  color: #333;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.download-btn.dl-link.btn-x2:hover {
+  color: #333;
+}
+
+.download-btn.dl-link.btn-xtech {
+  border-image-source: url('/images/assets/buttons.png');
+  border-image-slice: 120 8 0 8 fill;
+}
+
+.dl-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.dl-platform-label {
+  font-weight: bold;
+  margin: 10px 0 2px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.dl-note {
+  font-size: 0.9em;
+  color: #666;
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
 /* ========================================================================== */
 /* Responsive Navigation                                                      */
 /* ========================================================================== */

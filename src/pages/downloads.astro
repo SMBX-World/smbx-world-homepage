@@ -60,41 +60,69 @@ import BlockBox from '../components/BlockBox.astro';
     <BlockBox color="white">
       <section>
         <article>
-          <h2>下载链接</h2>
+          <h2>下载 SMBX</h2>
           <p>这里分为官方渠道（简称官渠），如果官网下载慢怎么办？这里有国内服务器托管的下载地址。<br>
           在这里也感谢<a href="https://smbx.world/u/6" class="UserMention">@斩风千雪</a>，<a href="https://smbx.world/u/5" class="UserMention">@Hafulor</a>，<a href="https://smbx.world/u/32" class="UserMention">@Yave Yu</a>提供的网盘服务。</p>
 
           <div class="version-panel" id="panel-legacy">
             <p><strong>Legacy 版本</strong><br>
-            目前已不太建议使用老版本进行游玩，可以尝试 TheXTech，在游玩旧版本时会匹配对应版本的特性。<br>
-            <a href="https://pan.baidu.com/s/166zoimBykihtUEEtV7EC9w?pwd=y3mm" rel="ugc nofollow">SMBX 1.3.0.1（百度盘）</a><br>
-            更老的版本请访问该页面：<a href="https://smbxarchive.wohlsoft.ru/" rel="ugc nofollow">https://smbxarchive.wohlsoft.ru/</a></p>
+            目前已不太建议使用老版本进行游玩，可以尝试 TheXTech，在游玩旧版本时会匹配对应版本的特性。</p>
+            <div class="dl-btn-group">
+              <a href="https://pan.baidu.com/s/166zoimBykihtUEEtV7EC9w?pwd=y3mm" class="download-btn dl-link btn-legacy" target="_blank" rel="noopener noreferrer">1.3.0.1（百度盘）</a>
+              <a href="https://smbxarchive.wohlsoft.ru/" class="download-btn dl-link btn-legacy" target="_blank" rel="noopener noreferrer">其他版本归档</a>
+            </div>
           </div>
 
           <div class="version-panel" id="panel-38a">
-            <p><strong>38A 版本</strong><br>
-            <a href="https://pan.baidu.com/s/1pljORzfPrTBHKnNaWc_n3A?pwd=2333" rel="ugc nofollow">SMBX 1.4.5.1</a>（由 <a href="https://smbx.world/u/49" class="UserMention">@霁晴</a> 制作的改良版，优化 1.4.5 游戏本体内容（如贴图素材）并加入了更符合 38A 特色的 TI2（新状态，新关卡，新 Boss）作为内置作品，<strong>强烈推荐</strong>）<br>
-            <a href="https://smbx38a.wohlsoft.ru/" rel="ugc nofollow">SMBX 1.4.5（官渠）</a><br>
-            <a href="https://pan.baidu.com/s/1mwrpen0tswMYe6yKJ2F9PQ" rel="ugc nofollow">SMBX 1.4.4 & 1.4.5（百度盘）</a></p>
+            <p><strong>38A 版本</strong></p>
+            <div class="dl-btn-group">
+              <a href="https://pan.baidu.com/s/1pljORzfPrTBHKnNaWc_n3A?pwd=2333" class="download-btn dl-link btn-38a" target="_blank" rel="noopener noreferrer">1.4.5.1 改良版</a>
+              <a href="https://smbx38a.wohlsoft.ru/" class="download-btn dl-link btn-38a" target="_blank" rel="noopener noreferrer">1.4.5（官渠）</a>
+              <a href="https://pan.baidu.com/s/1mwrpen0tswMYe6yKJ2F9PQ" class="download-btn dl-link btn-38a" target="_blank" rel="noopener noreferrer">1.4.4 &amp; 1.4.5（百度盘）</a>
+            </div>
+            <p class="dl-note">SMBX 1.4.5.1 由 <a href="https://smbx.world/u/49" class="UserMention">@霁晴</a> 制作，优化 1.4.5 游戏本体内容（如贴图素材）并加入了更符合 38A 特色的 TI2（新状态，新关卡，新 Boss）作为内置作品，<strong>强烈推荐</strong>。<br>
+            注：5438A38A 在更新 1.4.5 时，将游戏的程序完全重构了一遍，同时移除了部分 1.4.4 内所支持的脚本函数，故 1.4.5 无法完全兼容部分 1.4.4 作品。若想游玩 38A 版本的作品，<span class="emphasis">建议将 1.4.4 与 1.4.5 版本同时下载</span>，使用 1.4.4 及之前的 1.4 版本开发的作品用 1.4.4 运行，使用 1.4.5 开发的作品用 1.4.5 运行。</p>
           </div>
 
           <div class="version-panel" id="panel-x2">
-            <p><strong>X2 版本</strong><br>
-            <a href="https://codehaus.moe/downloads.php" rel="ugc nofollow">SMBX2（官渠）</a><br>
-            <a href="https://pan.baidu.com/s/1Dw4pyPKbFO-YnysekxtD_A?pwd=16np" rel="ugc nofollow">SMBX2 （百度盘）</a>（提取码 16np）</p>
+            <p><strong>X2 版本</strong></p>
+            <div class="dl-btn-group">
+              <a href="https://codehaus.moe/downloads.php" class="download-btn dl-link btn-x2" target="_blank" rel="noopener noreferrer">SMBX2（官渠）</a>
+              <a href="https://pan.baidu.com/s/1Dw4pyPKbFO-YnysekxtD_A?pwd=16np" class="download-btn dl-link btn-x2" target="_blank" rel="noopener noreferrer">SMBX2（百度盘）</a>
+            </div>
           </div>
 
           <div class="version-panel" id="panel-xtech">
-            <p><strong>TheXTech</strong><br>
-            官网渠道：<a href="https://wohlsoft.ru/forum/viewtopic.php?f=5&t=3677" rel="ugc nofollow">TheXTech（官渠）</a><br>
-            目前最新版本为 1.3.7.2。<br>
-            以下链接为访问官网下载速度慢的用户准备的备用链接：<br>
-            Windows：<a href="https://wwbta.lanzouq.com/i5AET3eoffob" rel="ugc nofollow">32位</a>，<a href="https://wwbta.lanzouq.com/iKSJ63eofg4h" rel="ugc nofollow">64位</a>，<a href="https://wwbta.lanzouq.com/iJnxK3eoffyb" rel="ugc nofollow">ARM</a><br>
-            Android：<a href="https://wwbta.lanzouq.com/iqWzd3eofffc" rel="ugc nofollow">APK安装包</a>，<a href="https://wwbta.lanzouq.com/iO8ap3eoff6d" rel="ugc nofollow">资源包（SMBX）</a><br>
-            Linux：<a href="https://wwbta.lanzouq.com/iszNt3eofgbe" rel="ugc nofollow">U24</a><br>
-            MacOS（英特尔&苹果M系列芯片均可）：<a href="https://wwbta.lanzouq.com/iAEMN3eofmfe" rel="ugc nofollow">安装包</a><br>
-            Web：<a href="http://wohlsoft.ru/TheXTech/smbx-on-web/" title="即刻开玩" target="_blank" rel="noopener noreferrer">即刻开玩</a></p>
-            <p>注：手机端需下载资源包才可正常运行，可以前往该网站下载：<a href="https://github.com/TheXTech/TheXTech/wiki/Game-assets-packages" rel="ugc nofollow">GitHub</a>，也可以点击上方链接。</p>
+            <p><strong>TheXTech</strong><br></p>
+            <p class="dl-note">目前最新版本为 1.3.7.2。</p>
+            <div class="dl-btn-group">
+              <a href="https://wohlsoft.ru/projects/TheXTech/#links" class="download-btn dl-link btn-xtech" target="_blank" rel="noopener noreferrer">TheXTech（官渠）</a>
+            </div>
+            <p class="dl-platform-label">Windows</p>
+            <div class="dl-btn-group">
+              <a href="https://wwbta.lanzouq.com/i5AET3eoffob" class="download-btn dl-link btn-xtech" target="_blank" rel="noopener noreferrer">32位</a>
+              <a href="https://wwbta.lanzouq.com/iKSJ63eofg4h" class="download-btn dl-link btn-xtech" target="_blank" rel="noopener noreferrer">64位</a>
+              <a href="https://wwbta.lanzouq.com/iJnxK3eoffyb" class="download-btn dl-link btn-xtech" target="_blank" rel="noopener noreferrer">ARM</a>
+            </div>
+            <p class="dl-platform-label">Android</p>
+            <div class="dl-btn-group">
+              <a href="https://wwbta.lanzouq.com/iqWzd3eofffc" class="download-btn dl-link btn-xtech" target="_blank" rel="noopener noreferrer">APK 安装包</a>
+              <a href="https://wwbta.lanzouq.com/iO8ap3eoff6d" class="download-btn dl-link btn-xtech" target="_blank" rel="noopener noreferrer">资源包（SMBX）</a>
+            </div>
+            <p class="dl-platform-label">Linux</p>
+            <div class="dl-btn-group">
+              <a href="https://wwbta.lanzouq.com/iszNt3eofgbe" class="download-btn dl-link btn-xtech" target="_blank" rel="noopener noreferrer">U24</a>
+            </div>
+            <p class="dl-platform-label">MacOS</p>
+            <div class="dl-btn-group">
+              <a href="https://wwbta.lanzouq.com/iAEMN3eofmfe" class="download-btn dl-link btn-xtech" target="_blank" rel="noopener noreferrer">安装包</a>
+            </div>
+            <p class="dl-platform-label">Web</p>
+            <div class="dl-btn-group">
+              <a href="http://wohlsoft.ru/TheXTech/smbx-on-web/" class="download-btn dl-link btn-xtech" target="_blank" rel="noopener noreferrer">即刻开玩</a>
+            </div>
+            <p class="dl-note">注：手机端需下载资源包才可正常运行，可以前往该网站下载：<a href="https://github.com/TheXTech/TheXTech/wiki/Game-assets-packages" target="_blank" rel="noopener noreferrer">GitHub</a>，也可以点击上方链接。<br>
+            以上链接为访问官网下载速度慢的用户准备的备用链接。</p>
           </div>
 
           <h3>Q&A</h3>
@@ -113,7 +141,7 @@ import BlockBox from '../components/BlockBox.astro';
   </main>
 
   <script>
-    const buttons = document.querySelectorAll<HTMLAnchorElement>('.download-btn');
+    const buttons = document.querySelectorAll<HTMLAnchorElement>('.download-btn:not(.dl-link)');
     const panels = document.querySelectorAll<HTMLElement>('.version-panel');
 
     function switchVersion(version: string) {
