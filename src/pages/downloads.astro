@@ -159,6 +159,8 @@ import BlockBox from '../components/BlockBox.astro';
       buttons.forEach(btn => btn.classList.remove('active'));
       const activeBtn = document.querySelector(`.download-btn[data-version="${version}"]`);
       if (activeBtn) activeBtn.classList.add('active');
+
+      window.dispatchEvent(new Event('blockbox-resize'));
     }
 
     buttons.forEach(btn => {
