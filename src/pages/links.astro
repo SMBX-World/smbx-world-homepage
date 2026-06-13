@@ -71,14 +71,14 @@ const friendSites = [
                 return (
                   <tr>
                     <td class="panel-links-td">
-                      <p class="center"><span class="tagline"><a href={site.link} target="_blank" rel="noopener noreferrer">{site.name}</a></span></p>
-                      <p class="center"><a href={site.link} target="_blank" rel="noopener noreferrer"><img alt={site.name} title={site.name} src={site.image} /></a></p>
+                      <p class="center"><span class="tagline"><a href={site.link} target="_blank">{site.name}</a></span></p>
+                      <p class="center"><a href={site.link} target="_blank"><img alt={site.name} title={site.name} src={site.image} /></a></p>
                       <p class="center">{site.desc}</p>
                     </td>
                     {next ? (
                       <td class="panel-links-td">
-                        <p class="center"><span class="tagline"><a href={next.link} target="_blank" rel="noopener noreferrer">{next.name}</a></span></p>
-                        <p class="center"><a href={next.link} target="_blank" rel="noopener noreferrer"><img alt={next.name} title={next.name} src={next.image} /></a></p>
+                        <p class="center"><span class="tagline"><a href={next.link} target="_blank">{next.name}</a></span></p>
+                        <p class="center"><a href={next.link} target="_blank"><img alt={next.name} title={next.name} src={next.image} /></a></p>
                         <p class="center">{next.desc}</p>
                       </td>
                     ) : <td></td>}
