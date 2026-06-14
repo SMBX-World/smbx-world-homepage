@@ -611,9 +611,12 @@ iframe {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
-.pipe-col:has(.pipelabel a:hover) .pipe {
+.pipe-col:hover .pipe {
   transform: translateY(3px);
 }
 
@@ -635,17 +638,14 @@ iframe {
   height: 28px;
   vertical-align: top;
   text-align: center;
-}
-
-.pipelabel a {
   unicode-bidi: normal;
   color: #000;
-  text-decoration: none;
   font-weight: bold;
   font-size: 16px;
+  transition: color 0.15s ease;
 }
 
-.pipelabel a:hover {
+.pipe-col:hover .pipelabel {
   color: #F8C810;
 }
 
@@ -1487,9 +1487,6 @@ iframe {
   .pipelabel {
     padding: 4px;
     height: auto;
-  }
-
-  .pipelabel a {
     font-size: 14px;
   }
 }
@@ -1512,7 +1509,7 @@ iframe {
     height: 61px;
   }
 
-  .pipelabel a {
+  .pipelabel {
     font-size: 13px;
   }
 }

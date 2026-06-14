@@ -6,6 +6,7 @@ interface Props {
 
 const { title, theme = 'default' } = Astro.props;
 const themeClass = theme !== 'default' ? `theme-${theme}` : '';
+const currentYear = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -13,7 +14,7 @@ const themeClass = theme !== 'default' ? `theme-${theme}` : '';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="超级马力欧兄弟X - 史上最棒的超级马力欧同人游戏" />
+    <meta name="description" content="SMBX World 成立于 2022 年 3 月 3 日，是同人游戏 Super Mario Bros. X（超级马力欧兄弟 X）的中文社群。" />
     <link href="/favicon.ico" rel="shortcut icon" />
     <title>{title} - SMBX World</title>
   </head>
@@ -22,33 +23,33 @@ const themeClass = theme !== 'default' ? `theme-${theme}` : '';
       <tr>
         <td style="vertical-align: top; height: 100%;">
           <div class="menu">
-            <a href="/"><img alt="超级马力欧兄弟X" title="超级马力欧兄弟X" src="/images/assets/logo.png" /></a>
+            <a href="/"><img alt="SMBX World" title="SMBX World" src="/images/assets/logo.png" /></a>
           </div>
           <div id="pipes">
-            <div class="pipe-col">
+            <a class="pipe-col" title="首页" href="/">
               <div class="pipe"></div>
-              <div class="pipelabel"><a title="首页" href="/">首页</a></div>
-            </div>
-            <div class="pipe-col">
+              <div class="pipelabel">首页</div>
+            </a>
+            <a class="pipe-col" title="下载 SMBX" href="/downloads">
               <div class="pipe"></div>
-              <div class="pipelabel"><a title="下载 SMBX" href="/downloads">下载</a></div>
-            </div>
-            <div class="pipe-col">
+              <div class="pipelabel">下载</div>
+            </a>
+            <a class="pipe-col" title="社区" href="https://smbx.world/" target="_blank" rel="noopener noreferrer">
               <div class="pipe"></div>
-              <div class="pipelabel"><a title="社区" href="https://smbx.world/" target="_blank">社区</a></div>
-            </div>
-            <div class="pipe-col">
+              <div class="pipelabel">社区</div>
+            </a>
+            <a class="pipe-col" title="百科" href="https://wiki.smbx.world/" target="_blank" rel="noopener noreferrer">
               <div class="pipe"></div>
-              <div class="pipelabel"><a title="百科" href="https://wiki.smbx.world/" target="_blank">百科</a></div>
-            </div>
-            <div class="pipe-col">
+              <div class="pipelabel">百科</div>
+            </a>
+            <a class="pipe-col" title="地图站" href="https://station.smbx.world/" target="_blank" rel="noopener noreferrer">
               <div class="pipe"></div>
-              <div class="pipelabel"><a title="地图站" href="https://station.smbx.world/" target="_blank">地图站</a></div>
-            </div>
-            <div class="pipe-col">
+              <div class="pipelabel">地图站</div>
+            </a>
+            <a class="pipe-col" title="到其他网站的链接" href="/links">
               <div class="pipe"></div>
-              <div class="pipelabel"><a title="到其他网站的链接" href="/links">友链</a></div>
-            </div>
+              <div class="pipelabel">友链</div>
+            </a>
           </div>
 
           <div class="wrapper">
@@ -60,7 +61,7 @@ const themeClass = theme !== 'default' ? `theme-${theme}` : '';
       <tr>
         <td class="valign-bottom">
           <div id="link-nextpage">
-            <p class="image"><a class="link-footer-1" title="SMBX Episodes" href="/episodes">作品</a></p>
+            <p class="image"><a class="link-footer-1" title="作品" href="/episodes">作品</a></p>
             <p class="image"><img class="footer-image" src="/images/assets/footer-1.png" /></p>
           </div>
         </td>
@@ -75,7 +76,7 @@ const themeClass = theme !== 'default' ? `theme-${theme}` : '';
     <div class="footer-fore"></div>
     <div id="footer-links">
       <div class="footer-left">
-        2022-2026 SMBX World, 从SuperMarioBrosX.org上复制并修改 &bull; <a href="/">首页</a> &bull; <a href="/downloads">下载</a> &bull; <a href="https://smbx.world/" target="_blank">社区</a> &bull; <a href="https://wiki.smbx.world/" target="_blank">百科</a> &bull; <a href="https://station.smbx.world/" target="_blank">地图站</a> &bull; <a href="/links">友链</a>
+        2022-{currentYear} SMBX World, 从原SuperMarioBrosX.org上复制并修改 &bull; <a href="/">首页</a> &bull; <a href="/downloads">下载</a> &bull; <a href="https://smbx.world/" target="_blank">社区</a> &bull; <a href="https://wiki.smbx.world/" target="_blank">百科</a> &bull; <a href="https://station.smbx.world/" target="_blank">地图站</a> &bull; <a href="/links">友链</a> &bull; <a href="/episodes">作品</a></p>
       </div>
     </div>
     <div class="topclouds"></div>
