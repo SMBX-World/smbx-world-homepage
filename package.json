@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "devDependencies": {
-    "astro": "^6.4.8"
+    "astro": "^7.0.3"
   },
   "scripts": {
     "dev": "astro dev",
