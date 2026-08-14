@@ -4,6 +4,15 @@ import BlockBox from '../components/BlockBox.astro';
 
 const episodes = [
   {
+    title: 'Level go go go',
+    link: 'https://smbx.world/d/416',
+    image: '/images/uploads/1783860769-870913-2-2.png',
+    author: 'AOT',
+    authorLink: 'https://smbx.world/u/328',
+    date: '2026.7.12',
+    smbx: 'TheXTech',
+  },
+  {
     title: 'HEL Arena',
     link: 'https://smbx.world/d/408',
     image: '/images/uploads/HEL ARENA BANNER.webp',
@@ -20,7 +29,6 @@ const episodes = [
     authorLink: 'https://smbx.world/u/328',
     date: '2026.1.10',
     smbx: '1.3',
-    download: 'https://smbx.world/api/fof/download/62899dc7-df33-4bcb-92ee-9db26d0155b8/2381/cYMamhRatPtU4cDmcM5KD90yPN2VgBe5npcO0NXc',
   },
   {
     title: 'The Legend of Darkness',
@@ -29,7 +37,7 @@ const episodes = [
     author: '喝了工作室',
     smbx: '1.4.5',
     date: '2025.6.27',
-    download: 'https://assets.station.smbx.world/d/station/T/%5B1.4.5%5D%20The%20Legend%20of%20Darkness%20Demo.zip',
+    download: 'https://smbxworld-s3.chyk.ink/station/T/%5B1.4.5%5D%20The%20Legend%20of%20Darkness%20Demo.zip',
   },
   {
     title: 'Contradict\'s Tactical Tactics Contest 5',
@@ -38,7 +46,7 @@ const episodes = [
     author: 'CTTC5 Authors',
     smbx: '1.4.5',
     date: '2025.5.1',
-    download: 'https://assets.station.smbx.world/d/station/C/%5B1.4.5%5D%20Contradict%27s%20Tactical%20Tactics%20Contest%205%20V1.4.1.7z',
+    download: 'https://smbxworld-s3.chyk.ink/station/C/%5B1.4.5%5D%20Contradict%27s%20Tactical%20Tactics%20Contest%205%20V1.4.1.7z',
   },
   {
     title: 'Expedition - Astral Fragments',
@@ -61,13 +69,23 @@ const episodes = [
     download: 'https://pan.baidu.com/s/1XnV_NCXKVSOOiWdFo78DTQ?pwd=lugi',
   },
   {
+    title: 'Clockwork Factory',
+    link: 'https://smbx.world/d/245',
+    image: '/images/uploads/1729151461-938934-2024-10-17-003056.webp',
+    author: 'NG762',
+    authorLink: 'https://smbx.world/u/35',
+    date: '2024.10.17',
+    smbx: 'X2',
+    download: 'https://pan.baidu.com/s/15-eyTu4JWY3qeLJ8cDqwhQ?pwd=95x4',
+  },
+  {
     title: 'Planet of Tieba Deluxe',
     link: 'https://smbx.world/d/220',
     image: '/images/uploads/2024-12-18_1h49m39s889ms.webp',
     author: 'PoT Authors',
     smbx: '1.4.4',
     date: '2024.7.2',
-    download: 'https://assets.station.smbx.world/d/station/P/%5B1.4.4%5D%20Planet%20of%20Tieba%20Deluxe.rar',
+    download: 'https://smbxworld-s3.chyk.ink/station/P/%5B1.4.4%5D%20Planet%20of%20Tieba%20Deluxe.rar',
   },
   {
     title: '双子阴阳岛之谜',
@@ -80,13 +98,43 @@ const episodes = [
     download: 'https://pan.baidu.com/s/1pgvsg5XkC1qB2CUqJnVJRg?pwd=2333',
   },
   {
+    title: 'vk\'s world',
+    link: 'https://smbx.world/d/101',
+    image: '/images/uploads/1651765817-315119-1ilye.webp',
+    author: 'vkdfkc',
+    authorLink: 'https://smbx.world/u/30',
+    date: '2022.5.6',
+    smbx: '1.4.5',
+    download: 'https://pan.baidu.com/s/1QUowv_51PbaiGExkgvAzxg?pwd=xhe8',
+  },
+  {
     title: 'Contradict\'s Tactical Tactics Contest 3',
     link: 'https://smbx.world/d/306',
     image: '/images/uploads/cttc3-level.webp',
     author: 'CTTC3 Authors',
     date: '2025.8.8',
     smbx: '1.4.4',
-    download: 'https://assets.station.smbx.world/d/station/C/%5B1.4.4%5D%20Contradict%27s%20Tactical%20Tactics%20Contest%203%20REVISION.zip',
+    download: 'https://smbxworld-s3.chyk.ink/station/C/%5B1.4.4%5D%20Contradict%27s%20Tactical%20Tactics%20Contest%203%20REVISION.zip',
+  },
+  {
+    title: '峨语知识问答豪华版',
+    link: 'https://smbx.world/d/58',
+    image: '/images/uploads/bO4n78.md.webp',
+    author: 'sssadfs',
+    authorLink: 'https://smbx.world/u/39',
+    date: '2022.3.14',
+    smbx: '1.4.4',
+    download: 'https://smbxworld-s3.chyk.ink/station/Q/%5B1.4.4%5D%20Quiz%20of%20MountainMe%20Deluxe.zip',
+  },
+  {
+    title: '马里奥和诺亚之瓶',
+    link: 'https://smbx.world/d/27',
+    image: '/images/uploads/6b2419f33a87e9508bfd524f1d385343faf2b4d4.webp',
+    author: 'oo00200oo',
+    authorLink: 'https://smbx.world/u/14',
+    date: '2022.3.5',
+    smbx: '1.4.4',
+    download: 'https://pan.baidu.com/s/1THwZPyvnNhx46n3bdV1g-g?pwd=70in',
   },
   {
     title: 'Island of Drank',
@@ -95,7 +143,17 @@ const episodes = [
     author: '喝了工作室',
     date: '2021.2.26',
     smbx: '1.4.4',
-    download: 'https://assets.station.smbx.world/d/%2Fstation%2FI%2F%5B1.4.4%5D%20Island%20of%20Drank.zip',
+    download: 'https://smbxworld-s3.chyk.ink/station/I/%5B1.4.4%5D%20Island%20of%20Drank.zip',
+  },
+  {
+    title: 'Brick Break',
+    link: 'https://smbx.world/d/83',
+    image: '/images/uploads/Q4MPEj.png',
+    author: 'Yave Yu',
+    authorLink: 'https://smbx.world/u/32',
+    date: '2020.2.17',
+    smbx: '1.4.4',
+    download: 'https://pan.baidu.com/s/16Lk7CcchuQWc-BpGn7tDkA?pwd=7dke',
   },
 ];
 ---
@@ -125,9 +183,12 @@ const episodes = [
               <h2>
                 <a href={ep.link} title={ep.title} target="_blank">{ep.title}</a>
               </h2>
-              <span class="author">作者 <a href={ep.authorLink} title={`Posts by ${ep.author}`} rel="author" target="_blank">{ep.author}</a></span><br />
+              <span class="author">作者：<a href={ep.authorLink} title={`Posts by ${ep.author}`} rel="author" target="_blank">{ep.author}</a></span><br />
               <span class="smbx-version">SMBX 版本：{ep.smbx}</span><br />
               <span class="date">发布于 {ep.date.replace(/(\d+)\.(\d+)\.(\d+)/, (_, y, m, d) => `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`)}</span>
+              <div class="episode-download">
+                <a href={ep.download ?? ep.link} target="_blank" rel="noopener noreferrer"><strong>点击下载作品</strong></a>
+              </div>
             </BlockBox>
           </article>
         ))}
