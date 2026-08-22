@@ -158,7 +158,6 @@ const episodes = [
 <BaseLayout title="作品" theme="desert">
   <header class="header clear" role="banner">
     <p class="image"><img src="/images/assets/toad.png" /></p>
-
     <BlockBox color="orange">
       <h2>作品</h2>
       <p>本页面列出了部分精品 SMBX 地图，点击地图即可跳转到 SMBX World 中文社区详情页。<br>
@@ -193,3 +192,11 @@ const episodes = [
     </section>
   </main>
 </BaseLayout>
+
+<style>
+  /* 让页头卡片与 main 之间的间距，与作品卡片之间的间距在视觉上一致。
+     作品卡片间距 = BlockBox 下边距 16px + 网格间距 16px = 32px */
+  header.header :global(#everything) {
+    margin-bottom: 32px;
+  }
+</style>
