@@ -160,7 +160,7 @@ const episodes = [
     <p class="image"><img src="/images/assets/toad.png" /></p>
     <BlockBox color="orange">
       <h2>作品</h2>
-      <p>本页面列出了部分精品 SMBX 地图，点击地图即可跳转到 SMBX World 中文社区详情页。<br>
+      <p>本页面列出了部分精品 SMBX 地图，点击图片可查看大图，点击标题即可跳转到 SMBX World 中文社区详情页。<br>
       想玩更多作品？来看看 <a href="https://station.smbx.world/" target="_blank">SMBX World 地图站</a>！</p>
     </BlockBox>
   </header>
@@ -172,7 +172,7 @@ const episodes = [
           <article>
             <BlockBox color="orange">
               <div class="featured-image">
-                <a href={ep.link} title={ep.title} target="_blank">
+                <a href={ep.image} title={ep.title} data-lightbox="episodes">
                   <img src={ep.image} alt={ep.title} />
                 </a>
               </div>
