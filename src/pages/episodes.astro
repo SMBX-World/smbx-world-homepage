@@ -182,11 +182,11 @@ const episodes = [
               <h2>
                 <a href={ep.link} title={ep.title} target="_blank">{ep.title}</a>
               </h2>
-              {ep.author && <span class="author">作者：<a href={ep.authorLink} title={`Posts by ${ep.author}`} rel="author" target="_blank">{ep.author}</a></span><br />}
+              {ep.author && <span class="author">作者：<a href={ep.authorLink} title={ep.author} rel="author" target="_blank">{ep.author}</a></span><br />}
               <span class="smbx-version">SMBX 版本：{ep.smbx}</span><br />
               <span class="date">发布于 {ep.date.replace(/(\d+)\.(\d+)\.(\d+)/, (_, y, m, d) => `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`)}</span>
               <div class="episode-download">
-                <a href={ep.download ?? ep.link} target="_blank" rel="noopener noreferrer"><strong>点击下载作品</strong></a>
+                <a href={ep.download ?? ep.link} title={`下载 ${ep.title}`} target="_blank" rel="noopener noreferrer"><strong>点击下载作品</strong></a>
               </div>
             </BlockBox>
           </article>
